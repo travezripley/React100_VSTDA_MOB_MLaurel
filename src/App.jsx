@@ -4,6 +4,10 @@ import TodosAdd from "./TodosAdd";
 import TodosList from "./TodosList";
 
 class App extends Component {
+    constructor() {
+        super();
+        this.state = {};
+    }
     render() {
         return (
             <div className="container-fluid mt-3 mb-3">

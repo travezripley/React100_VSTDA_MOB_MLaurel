@@ -9,12 +9,13 @@ class TodosList extends React.Component {
             <div className="card">
                 <div className="card-header">View Todos</div>
                 <div className="card-body p-0">
-                    {/* Blank State */}
-                    <TodosBlankState />
-                    {/* Edit Form */}
-                    <TodosEditItem />
-                    {/* Todo items */}
-                    <TodosListItem priority="" />
+                    <ul className="list-group">
+                        <TodosBlankState />
+                        <TodosEditItem />
+                        <TodosListItem />
+                        <TodosListItem />
+                        <TodosListItem />
+                    </ul>
                 </div>
             </div>
         );
