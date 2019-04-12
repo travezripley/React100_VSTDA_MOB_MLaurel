@@ -64,14 +64,17 @@ class App extends Component {
     }
 
     handleCompleted(id) {
-        console.log(id);
         let items = this.state.todos;
-
-        for (let i = 0; i < items.length; i++) {
+        // for (let i = 0; i < items.length; i++) {
+        //     if (items[i].id == id) {
+        //         items[i].completed = !items[i].completed;
+        //     }
+        // }
+        items.map(item => {
             if (items[i].id == id) {
                 items[i].completed = !items[i].completed;
             }
-        }
+        });
         this.setState({ todos: items });
     }
 
