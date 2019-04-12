@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import TodosHeader from "./TodosHeader";
 import TodosList from "./TodosList";
 
-const todosData = [
+const sampleData = [
     {
         id: 0,
         todo: "Take out the trash",
         priority: 1,
         editEnabled: false,
-        completed: false
+        completed: true
     },
     {
         id: 1,
@@ -26,18 +26,16 @@ const todosData = [
     }
 ];
 
+let id = 3;
+
 class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos: todosData,
-            id: 0,
-            todo: "",
-            priority: 0,
-            editEnabled: false,
-            completed: false
+            todos: sampleData
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleCompleted = this.handleCompleted.bind(this);
     }
 
     handleSubmit(e) {
@@ -50,8 +48,11 @@ class App extends Component {
                 todos: [
                     ...todos,
                     {
+                        id: id++,
                         todo,
-                        priority
+                        priority,
+                        editEnabled: false,
+                        completed: false
                     }
                 ]
             },
@@ -60,6 +61,18 @@ class App extends Component {
                 this.refs.priority.value = "";
             }
         );
+    }
+
+    handleCompleted(id) {
+        console.log(id);
+        let items = this.state.todos;
+
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id == id) {
+                items[i].completed = !items[i].completed;
+            }
+        }
+        this.setState({ todos: items });
     }
 
     render() {
@@ -120,7 +133,10 @@ class App extends Component {
                         </form>
                     </div>
                     <div className="col-8">
-                        <TodosList todos={this.state.todos} />
+                        <TodosList
+                            todos={this.state.todos}
+                            handleCompleted={this.handleCompleted}
+                        />
                     </div>
                 </div>
             </div>

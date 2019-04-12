@@ -16,6 +16,10 @@ class TodosListItem extends React.Component {
             listClass = "danger";
         }
 
+        if (this.props.completed) {
+            listStrike = "strike-through";
+        }
+
         return (
             <li className={`list-group-item pb-0 list-group-item-${listClass}`}>
                 <div className="form-group form-check m-0 float-left">
@@ -23,9 +27,13 @@ class TodosListItem extends React.Component {
                         type="checkbox"
                         className="form-check-input"
                         id="todo-checkbox-name"
+                        checked={this.props.completed}
+                        onChange={() =>
+                            this.props.handleCompleted(this.props.id)
+                        }
                     />
                     <label
-                        className="form-check-label strike-through"
+                        className={`form-check-label ${listStrike}`}
                         htmlFor="todo-checkbox-name"
                     >
                         {this.props.todo}
