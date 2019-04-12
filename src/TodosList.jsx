@@ -4,10 +4,6 @@ import TodosListItem from "./TodosListItem";
 class TodosList extends React.Component {
     constructor(props) {
         super(props);
-
-        // this.state = {
-        //     todos: this.props.data
-        // };
     }
 
     render() {
@@ -29,12 +25,10 @@ class TodosList extends React.Component {
                             <TodosListItem
                                 key={todo.id}
                                 id={todo.id}
-                                text={todo.text}
+                                todo={todo.todo}
                                 priority={todo.priority}
                                 editEnabled={todo.editEnabled}
                                 completed={todo.completed}
-                                addText={todo.addText}
-                                addPriority={todo.addPriority}
                             />
                         ))}
                     </ul>
