@@ -30,6 +30,8 @@ class TodosList extends React.Component {
                                 editEnabled={todo.editEnabled}
                                 completed={todo.completed}
                                 handleCompleted={this.props.handleCompleted}
+                                handleDeleted={this.props.handleDeleted}
+                                handleEdited={this.props.handleEdited}
                             />
                         ))}
                     </ul>

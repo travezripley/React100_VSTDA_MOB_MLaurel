@@ -36,6 +36,8 @@ class App extends Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleCompleted = this.handleCompleted.bind(this);
+        this.handleDeleted = this.handleDeleted.bind(this);
+        this.handleEdited = this.handleEdited.bind(this);
     }
 
     handleSubmit(e) {
@@ -65,18 +67,25 @@ class App extends Component {
 
     handleCompleted(id) {
         let items = this.state.todos;
-        // for (let i = 0; i < items.length; i++) {
-        //     if (items[i].id == id) {
-        //         items[i].completed = !items[i].completed;
-        //     }
-        // }
-        items.map(item => {
+        for (let i = 0; i < items.length; i++) {
             if (items[i].id == id) {
                 items[i].completed = !items[i].completed;
             }
-        });
+        }
         this.setState({ todos: items });
     }
+
+    handleDeleted(id) {
+        let items = this.state.todos;
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id == id) {
+                items.splice(i, 1);
+            }
+        }
+        this.setState({ todos: items });
+    }
+
+    handleEdited(id) {}
 
     render() {
         return (
@@ -139,6 +148,8 @@ class App extends Component {
                         <TodosList
                             todos={this.state.todos}
                             handleCompleted={this.handleCompleted}
+                            handleDeleted={this.handleDeleted}
+                            handleEdited={this.handleEdited}
                         />
                     </div>
                 </div>

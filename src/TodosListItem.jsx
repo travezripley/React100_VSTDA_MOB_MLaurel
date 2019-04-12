@@ -43,7 +43,10 @@ class TodosListItem extends React.Component {
                     <a className="edit-todo p-2">
                         <i className="fas fa-edit" />
                     </a>
-                    <a className="delete-todo p-2">
+                    <a
+                        className="delete-todo p-2"
+                        onClick={() => this.props.handleDeleted(this.props.id)}
+                    >
                         <i className="fas fa-trash-alt" />
                     </a>
                 </div>
