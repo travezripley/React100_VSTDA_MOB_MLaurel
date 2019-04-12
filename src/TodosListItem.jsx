@@ -3,7 +3,17 @@ import React from "react";
 class TodosListItem extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            todo: this.props.todo,
+            priority: this.props.priority
+        };
+        this.handleEditedItem = this.handleEditedItem.bind(this);
     }
+
+    handleEditedItem(e) {
+        this.setState({ [e.target.name]: e.target.value });
+    }
+
     render() {
         let listClass, listStrike;
         let listPriority = this.props.priority;
@@ -73,8 +83,10 @@ class TodosListItem extends React.Component {
                                 <textarea
                                     className="form-control update-todo-text"
                                     id="todo"
+                                    name="todo"
                                     rows="3"
-                                    value={this.props.todo}
+                                    value={this.state.todo}
+                                    onChange={this.handleEditedItem}
                                 />
                             </div>
                             <div className="form-group col-6">
@@ -87,6 +99,9 @@ class TodosListItem extends React.Component {
                                 <select
                                     className="form-control update-todo-priority"
                                     id="priority"
+                                    name="priority"
+                                    value={this.state.priority}
+                                    onChange={this.handleEditedItem}
                                 >
                                     <option>Select a Priority</option>
                                     <option value="1">High</option>
