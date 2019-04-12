@@ -30,7 +30,7 @@ class TodosEditItem extends React.Component {
                         </select>
                     </div>
                     <div className="form-group col-12">
-                        <button className="btn btn-success update-todo float-right">
+                        <button className="btn btn-success float-right create-todo">
                             Save
                         </button>
                     </div>

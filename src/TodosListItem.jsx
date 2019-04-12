@@ -8,9 +8,9 @@ class TodosListItem extends React.Component {
                     <input
                         type="checkbox"
                         className="form-check-input"
-                        id="exampleCheck1"
+                        id="todo-checkbox-name"
                     />
-                    <label className="form-check-label" htmlFor="exampleCheck1">
+                    <label className="form-check-label" htmlFor="todo-checkbox-name">
                         Pick up milk from the store
                     </label>
                 </div>

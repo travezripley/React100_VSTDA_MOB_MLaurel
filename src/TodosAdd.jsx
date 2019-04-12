@@ -1,6 +1,23 @@
 import React from "react";
 
 class TodosAdd extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            todo: "",
+            priority: "selected"
+        };
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(e) {
+        if (e.target.name === "todo") {
+            this.setState({ todo: e.target.value });
+        } else if (e.target.name === "priority") {
+            this.setState({ priority: e.target.value });
+        }
+    }
+
     render() {
         return (
             <div className="card">
@@ -32,7 +49,7 @@ class TodosAdd extends React.Component {
                     </div>
                 </div>
                 <div className="card-footer">
-                    <button className="btn btn-success btn-block add-todo">
+                    <button className="btn btn-success btn-block create-todo">
                         Add
                     </button>
                 </div>
