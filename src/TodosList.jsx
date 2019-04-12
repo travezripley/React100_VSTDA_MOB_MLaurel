@@ -1,15 +1,13 @@
 import React from "react";
-import TodosBlankState from "./TodosBlankState";
-import TodosEditItem from "./TodosEditItem";
 import TodosListItem from "./TodosListItem";
 
 class TodosList extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            todos: []
-        };
+        // this.state = {
+        //     todos: this.props.data
+        // };
     }
 
     render() {
@@ -18,13 +16,27 @@ class TodosList extends React.Component {
                 <div className="card-header">View Todos</div>
                 <div className="card-body p-0">
                     <ul className="list-group">
-                        {!this.state.todos.length && <TodosBlankState />}
-                        {/* {this.state.todos.map((todo, index) => ( */}
-                        <TodosEditItem />
-                        <TodosListItem />
-                        <TodosListItem />
-                        <TodosListItem />
-                        {/* ))} */}
+                        <li className="list-group-item list-group-item-primary pb-0">
+                            <p>
+                                <span className="font-weight-bold">
+                                    Welcome to Very Simple Todo App!
+                                </span>
+                                <br />
+                                Get started now by adding a new todo on the left
+                            </p>
+                        </li>
+                        {this.props.todos.map(todo => (
+                            <TodosListItem
+                                key={todo.id}
+                                id={todo.id}
+                                text={todo.text}
+                                priority={todo.priority}
+                                editEnabled={todo.editEnabled}
+                                completed={todo.completed}
+                                addText={todo.addText}
+                                addPriority={todo.addPriority}
+                            />
+                        ))}
                     </ul>
                 </div>
             </div>

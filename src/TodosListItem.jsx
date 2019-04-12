@@ -1,6 +1,9 @@
 import React from "react";
 
 class TodosListItem extends React.Component {
+    constructor(props) {
+        super(props);
+    }
     render() {
         return (
             <li className="list-group-item list-group-item-warning pb-0">
@@ -10,8 +13,11 @@ class TodosListItem extends React.Component {
                         className="form-check-input"
                         id="todo-checkbox-name"
                     />
-                    <label className="form-check-label" htmlFor="todo-checkbox-name">
-                        Pick up milk from the store
+                    <label
+                        className="form-check-label"
+                        htmlFor="todo-checkbox-name"
+                    >
+                        {this.props.text}
                     </label>
                 </div>
                 <div className="list-item-actions form-group float-right">
