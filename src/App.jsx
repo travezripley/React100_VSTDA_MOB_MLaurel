@@ -85,7 +85,15 @@ class App extends Component {
         this.setState({ todos: items });
     }
 
-    handleEdited(id) {}
+    handleEdited(id) {
+        let items = this.state.todos;
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id == id) {
+                items[i].editEnabled = !items[i].editEnabled;
+            }
+        }
+        this.setState({ todos: items });
+    }
 
     render() {
         return (
