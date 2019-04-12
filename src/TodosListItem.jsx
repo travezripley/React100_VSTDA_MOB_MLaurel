@@ -5,17 +5,19 @@ class TodosListItem extends React.Component {
         super(props);
     }
     render() {
-        let listClass;
+        let listClass, listStrike;
         let listPriority = this.props.priority;
 
         if (listPriority == 1) {
-            listClass = "list-group-item list-group-item-success pb-0";
+            listClass = "success";
         } else if (listPriority == 2) {
-            listClass = "list-group-item list-group-item-warning pb-0";
+            listClass = "warning";
+        } else if (listPriority == 3) {
+            listClass = "danger";
         }
 
         return (
-            <li className="list-group-item list-group-item-success pb-0">
+            <li className={`list-group-item pb-0 list-group-item-${listClass}`}>
                 <div className="form-group form-check m-0 float-left">
                     <input
                         type="checkbox"
