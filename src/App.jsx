@@ -35,9 +35,10 @@ class App extends Component {
             todos: sampleData
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleCompleted = this.handleCompleted.bind(this);
-        this.handleDeleted = this.handleDeleted.bind(this);
-        this.handleEdited = this.handleEdited.bind(this);
+        this.handleEventByType = this.handleEventByType.bind(this);
+        // this.handleDeleted = this.handleDeleted.bind(this);
+        // this.handleEdited = this.handleEdited.bind(this);
+        // this.handleSave = this.handleSave.bind(this);
     }
 
     handleSubmit(e) {
@@ -65,35 +66,44 @@ class App extends Component {
         );
     }
 
-    handleCompleted(id) {
+    handleEventByType(type, id) {
         let items = this.state.todos;
         for (let i = 0; i < items.length; i++) {
             if (items[i].id == id) {
-                items[i].completed = !items[i].completed;
+                switch (type) {
+                    case "completed":
+                        items[i].completed = !items[i].completed;
+                        break;
+                    case "deleted":
+                        items.splice(i, 1);
+                        break;
+                    case "edited":
+                        items[i].editEnabled = !items[i].editEnabled;
+                }
             }
         }
         this.setState({ todos: items });
     }
 
-    handleDeleted(id) {
-        let items = this.state.todos;
-        for (let i = 0; i < items.length; i++) {
-            if (items[i].id == id) {
-                items.splice(i, 1);
-            }
-        }
-        this.setState({ todos: items });
-    }
+    // handleDeleted(id) {
+    //     let items = this.state.todos;
+    //     for (let i = 0; i < items.length; i++) {
+    //         if (items[i].id == id) {
+    //         }
+    //     }
+    //     this.setState({ todos: items });
+    // }
 
-    handleEdited(id) {
-        let items = this.state.todos;
-        for (let i = 0; i < items.length; i++) {
-            if (items[i].id == id) {
-                items[i].editEnabled = !items[i].editEnabled;
-            }
-        }
-        this.setState({ todos: items });
-    }
+    // handleEdited(id) {
+    //     let items = this.state.todos;
+    //     for (let i = 0; i < items.length; i++) {
+    //         if (items[i].id == id) {
+    //         }
+    //     }
+    //     this.setState({ todos: items });
+    // }
+
+    handleSave(id) {}
 
     render() {
         return (
@@ -155,9 +165,10 @@ class App extends Component {
                     <div className="col-8">
                         <TodosList
                             todos={this.state.todos}
-                            handleCompleted={this.handleCompleted}
-                            handleDeleted={this.handleDeleted}
-                            handleEdited={this.handleEdited}
+                            handleEventByType={this.handleEventByType}
+                            // handleDeleted={this.handleDeleted}
+                            // handleEdited={this.handleEdited}
+                            // handleSave={this.handleSave}
                         />
                     </div>
                 </div>

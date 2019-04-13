@@ -41,7 +41,7 @@ class TodosListItem extends React.Component {
                                 id="todo-checkbox-name"
                                 checked={this.props.completed}
                                 onChange={() =>
-                                    this.props.handleCompleted(this.props.id)
+                                    this.props.handleEventByType("completed", this.props.id)
                                 }
                             />
                             <label
@@ -55,7 +55,7 @@ class TodosListItem extends React.Component {
                             <a
                                 className="edit-todo p-2"
                                 onClick={() =>
-                                    this.props.handleEdited(this.props.id)
+                                    this.props.handleEventByType("edited", this.props.id)
                                 }
                             >
                                 <i className="fas fa-edit" />
@@ -63,7 +63,7 @@ class TodosListItem extends React.Component {
                             <a
                                 className="delete-todo p-2"
                                 onClick={() =>
-                                    this.props.handleDeleted(this.props.id)
+                                    this.props.handleEventByType("deleted", this.props.id)
                                 }
                             >
                                 <i className="fas fa-trash-alt" />

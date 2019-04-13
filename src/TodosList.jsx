@@ -29,9 +29,10 @@ class TodosList extends React.Component {
                                 priority={todo.priority}
                                 editEnabled={todo.editEnabled}
                                 completed={todo.completed}
-                                handleCompleted={this.props.handleCompleted}
-                                handleDeleted={this.props.handleDeleted}
-                                handleEdited={this.props.handleEdited}
+                                handleEventByType={this.props.handleEventByType}
+                                // handleDeleted={this.props.handleDeleted}
+                                // handleEdited={this.props.handleEdited}
+                                // handleSave={this.props.handleSave}
                             />
                         ))}
                     </ul>
