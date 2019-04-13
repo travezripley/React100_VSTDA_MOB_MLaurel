@@ -19,11 +19,11 @@ class TodosListItem extends React.Component {
         let listPriority = this.props.priority;
 
         if (listPriority == 1) {
-            listClass = "success";
+            listClass = "danger";
         } else if (listPriority == 2) {
             listClass = "warning";
         } else if (listPriority == 3) {
-            listClass = "danger";
+            listClass = "warning";
         }
 
         if (this.props.completed) {

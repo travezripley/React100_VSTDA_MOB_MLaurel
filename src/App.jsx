@@ -32,7 +32,7 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            todos: sampleData
+            todos: []
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEventByType = this.handleEventByType.bind(this);
