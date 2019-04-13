@@ -19,11 +19,11 @@ class TodosListItem extends React.Component {
         let listPriority = this.props.priority;
 
         if (listPriority == 1) {
-            listClass = "danger";
+            listClass = "success";
         } else if (listPriority == 2) {
             listClass = "warning";
         } else if (listPriority == 3) {
-            listClass = "warning";
+            listClass = "danger";
         }
 
         if (this.props.completed) {
@@ -127,7 +127,7 @@ class TodosListItem extends React.Component {
                                             this.state.priority
                                         )
                                     }
-                                    className="btn btn-success float-right create-todo"
+                                    className="btn btn-success float-right update-todo"
                                 >
                                     Save
                                 </button>

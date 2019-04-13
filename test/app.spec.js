@@ -50,7 +50,7 @@ describe('Very Simple To Do App', function main() {
       .select('select.create-todo-priority', '1')
       .type('textarea.create-todo-text', 'ITEM')
       .click('button.create-todo')
-      .wait(500)
+      .wait(5500)
       .evaluate(() => {
         const { innerText, className } = document.querySelectorAll('li')[0];
         return { innerText, className };
