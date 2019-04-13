@@ -41,7 +41,10 @@ class TodosListItem extends React.Component {
                                 id="todo-checkbox-name"
                                 checked={this.props.completed}
                                 onChange={() =>
-                                    this.props.handleEventByType("completed", this.props.id)
+                                    this.props.handleEventByType(
+                                        "completed",
+                                        this.props.id
+                                    )
                                 }
                             />
                             <label
@@ -55,7 +58,10 @@ class TodosListItem extends React.Component {
                             <a
                                 className="edit-todo p-2"
                                 onClick={() =>
-                                    this.props.handleEventByType("edited", this.props.id)
+                                    this.props.handleEventByType(
+                                        "edited",
+                                        this.props.id
+                                    )
                                 }
                             >
                                 <i className="fas fa-edit" />
@@ -63,7 +69,10 @@ class TodosListItem extends React.Component {
                             <a
                                 className="delete-todo p-2"
                                 onClick={() =>
-                                    this.props.handleEventByType("deleted", this.props.id)
+                                    this.props.handleEventByType(
+                                        "deleted",
+                                        this.props.id
+                                    )
                                 }
                             >
                                 <i className="fas fa-trash-alt" />
@@ -110,7 +119,16 @@ class TodosListItem extends React.Component {
                                 </select>
                             </div>
                             <div className="form-group col-12">
-                                <button className="btn btn-success float-right create-todo">
+                                <button
+                                    onClick={() =>
+                                        this.props.handleSave(
+                                            this.props.id,
+                                            this.state.todo,
+                                            this.state.priority
+                                        )
+                                    }
+                                    className="btn btn-success float-right create-todo"
+                                >
                                     Save
                                 </button>
                             </div>

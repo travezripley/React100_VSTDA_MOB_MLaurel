@@ -36,6 +36,7 @@ class App extends Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEventByType = this.handleEventByType.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     handleSubmit(e) {
@@ -76,14 +77,23 @@ class App extends Component {
                         break;
                     case "edited":
                         items[i].editEnabled = !items[i].editEnabled;
+                        break;
                 }
             }
         }
         this.setState({ todos: items });
     }
 
-    handleSave(id) {
-        
+    handleSave(id, todo, priority) {
+        let items = this.state.todos;
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].id == id) {
+                items[i].todo = todo;
+                items[i].priority = priority;
+                items[i].editEnabled = !items[i].editEnabled;
+            }
+        }
+        this.setState({ todos: items });
     }
 
     render() {
@@ -147,6 +157,7 @@ class App extends Component {
                         <TodosList
                             todos={this.state.todos}
                             handleEventByType={this.handleEventByType}
+                            handleSave={this.handleSave}
                         />
                     </div>
                 </div>
