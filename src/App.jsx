@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TodosHeader from "./TodosHeader";
-import TodosList from "./TodosList";
+import TodosHeader from "./components/TodosHeader";
+import TodosList from "./components/TodosList";
 
 const sampleData = [
     {
