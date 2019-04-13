@@ -36,9 +36,6 @@ class App extends Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleEventByType = this.handleEventByType.bind(this);
-        // this.handleDeleted = this.handleDeleted.bind(this);
-        // this.handleEdited = this.handleEdited.bind(this);
-        // this.handleSave = this.handleSave.bind(this);
     }
 
     handleSubmit(e) {
@@ -85,25 +82,9 @@ class App extends Component {
         this.setState({ todos: items });
     }
 
-    // handleDeleted(id) {
-    //     let items = this.state.todos;
-    //     for (let i = 0; i < items.length; i++) {
-    //         if (items[i].id == id) {
-    //         }
-    //     }
-    //     this.setState({ todos: items });
-    // }
-
-    // handleEdited(id) {
-    //     let items = this.state.todos;
-    //     for (let i = 0; i < items.length; i++) {
-    //         if (items[i].id == id) {
-    //         }
-    //     }
-    //     this.setState({ todos: items });
-    // }
-
-    handleSave(id) {}
+    handleSave(id) {
+        
+    }
 
     render() {
         return (
@@ -166,9 +147,6 @@ class App extends Component {
                         <TodosList
                             todos={this.state.todos}
                             handleEventByType={this.handleEventByType}
-                            // handleDeleted={this.handleDeleted}
-                            // handleEdited={this.handleEdited}
-                            // handleSave={this.handleSave}
                         />
                     </div>
                 </div>
