@@ -1,15 +1,19 @@
+## A Very Simple To Do App (VSTDA)
+ 
+##Fifth Project in the React100 * Module @ San Diego Code School
 
-Fifth Project in the React100 * Module @ San Diego Code School
+# Author - Michel Roberts JR.
 
-#Author - Michel Roberts JR.
+# Brought to you by:
+# Travis Ripley, * Started Friday April 12th, 2019 10:00.
+# Mike Laurel * MLaurel@gmail.com
+# and Frank Barros * FD.Barros@yahoo.com
 
-#Modified by Travis Ripley, * Started Friday April 12th, 2019 10:00.
-#Modified by Mike Laurel * MLaurel@gmail.com
-#Modified by Frank Barros * FD.Barros@yahoo.com
+
 
 I will be logging my updates as a work through this project.
 
-# Very Simple ToDo App (VSTDA)
+Filmed in front of a live studio audience.
 
 ## Introduction
 
@@ -207,7 +211,7 @@ And that's it! [Submit your project](https://goo.gl/forms/wx8DLSus7s88lk043) and
 
 #Site deployed to Now at the following URL
 
-
+https://tsr-vstda.herokuapp.com/
 
 #Thank you for taking the time to look at my projects,
 
